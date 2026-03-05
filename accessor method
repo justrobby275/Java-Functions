@@ -1,2 +1,11 @@
-  public int getNumStudents() {
+   //Sets numStudents to the specified
+   //number of students in a course
+
+  public Course(int numStudents) {
+    this.numStudents = numStudents;
+  }
+
+
+
+public int getNumStudents() {
     return numStudents;
