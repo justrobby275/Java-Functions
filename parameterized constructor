@@ -1,0 +1,11 @@
+public class Drink {
+    private boolean isHot;
+    private String name;
+    private double price;
+
+    public Drink(boolean isHot, String name, double price) {
+        this.isHot = isHot;
+        this.name = name;
+        this.price = price;
+    }
+}
