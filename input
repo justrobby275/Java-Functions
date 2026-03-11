@@ -1,6 +1,9 @@
 public void processInput() {
         System.out.print("Enter a number: ");
         int number = input.nextInt();
+
+        input.nextLine();
+
         System.out.print("Enter your name: ");
         String name = input.nextLine();
         System.out.println("Number: " + number + ", Name: " + name);
