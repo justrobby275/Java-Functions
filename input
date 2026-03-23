@@ -8,3 +8,12 @@ public void processInput() {
         String name = input.nextLine();
         System.out.println("Number: " + number + ", Name: " + name);
 }
+
+
+
+
+System.out.print("Enter a new price for your favorite shirt: ");
+double newPrice = input.nextDouble();
+
+favShirt.setPrice(newPrice);
+System.out.println("Shirt Price: " + favShirt.getPrice());
