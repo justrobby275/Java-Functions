@@ -1,1 +1,3 @@
 Math.round(price * 100.0) / 100.0
+
+("price: %.2f\n" + price)
