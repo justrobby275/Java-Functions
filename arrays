@@ -1,0 +1,7 @@
+int[] scores = new int[5];
+
+//first
+scores[0]
+//last
+scores[scores.length-1]
+
