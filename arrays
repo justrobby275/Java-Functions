@@ -5,3 +5,12 @@ scores[0]
 //last
 scores[scores.length-1]
 
+
+    // Print the population for each region in the format:
+    int[] population = {55317240, 66927001, 114555744, 71945553}; 
+
+    // Modify the values in the population array to contain the 2019 values
+    population[0] = 55982803;
+    population[1] = 68329004;
+    population[2] = 125580448;
+    population[3] = 78347268;
