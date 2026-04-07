@@ -1,11 +1,10 @@
 //For will always run the same thing, while a While loop will come back and chec if anything has changed before running again
 
 
-String[ ] countries = {"Ecuador", "Ghana", "Italy", "Thailand"};
-
-for (int i = countries.length - 1; i >= 0; i--) {
-    System.out.println(countries[i]);
-}
+    for (int i=0; i < stateNames.length) {
+      result += stateNames[i] + ": " + rates[i] + "\n";
+      i++;
+    }
 
 
 
