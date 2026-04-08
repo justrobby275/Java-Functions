@@ -1,0 +1,21 @@
+//imports
+import java.io.File;
+import java.io.IOException;
+import java.util.Scanner;
+
+//Main header
+public class StudentRunner {
+  public static void main(String[] args) throws IOException{
+
+
+//text parser
+ public Student(String name) {
+        this.name = name;
+    }
+    public Student createStudentFromFile(String filename) throws IOException {
+        File file = new File(filename);
+        Scanner scanner = new Scanner(file);
+        String name = scanner.nextLine();
+        scanner.close();
+        return new Student(name);
+    }
