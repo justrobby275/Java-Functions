@@ -1,0 +1,141 @@
+public class DataRunner {
+  public static void main(String[] args) {
+
+    Channel tedTalks = new Channel("TED", "titles.txt", "durations.txt", "views.txt");
+
+    tedTalks.run();
+    
+    System.out.println(tedTalks.getVideoInfo(10)); 
+  }
+}
+
+
+
+import java.util.Scanner;
+
+public class Channel {
+
+  private String name;             // The name of a channel
+  private String[] videoTitles;    // The 1D array of video titles on a channel
+  private int[] durations;         // The 1D array of the duration of each video
+  private int[] numViews;          // The 1D array of the number of views for each video
+
+  /*
+   * Sets name to the specified channel name and reads the data from titlesFile, durationsFile,
+   * and numViewsFile to initialize the 1D arrays videoTitles, durations, and numViews
+   */
+  public Channel(String name, String titlesFile, String durationsFile, String numViewsFile) {
+    this.name = name;
+    
+    videoTitles = FileReader.toStringArray(titlesFile);
+    durations = FileReader.toIntArray(durationsFile);
+    numViews = FileReader.toIntArray(numViewsFile);
+  }
+
+  /*
+   * Repeatedly prompts the user and shows the
+   * results until they quit the program
+   */
+  public void run() {
+    int selection = 0;
+    
+    while (selection != 3) {
+      selection = promptUser();
+      System.out.println(showData(selection) + "\n");
+    }
+
+    System.out.println("Goodbye!");
+  }
+
+  /*
+   * Prompts the user to choose from provided options
+   */
+  public int promptUser() {
+    Scanner input = new Scanner(System.in);
+    
+    System.out.println("What would you like to know about the " + name + " channel? ");
+    System.out.println("1: The shortest video");
+    System.out.println("2: The video with the most views");
+    System.out.println("3: Quit");
+    System.out.print("Enter your choice (1, 2, or 3): ");
+    
+    int choice = input.nextInt();
+    input.close();
+    return choice;
+  }
+
+  /*
+   * Returns a String containing the results based on the user's choice
+   */
+  public String showData(int choice) {
+    int index = 0;
+    String result = "";
+    
+    if (choice == 1) {
+      index = getShortestVideo();
+      result = "\nResult Found:\n----------\n" + getVideoInfo(index);
+    }
+      
+    if (choice == 2) {
+      index = getMaxNumViews();
+      result = "\nResult Found:\n----------\n" + getVideoInfo(index);
+    }
+
+    return result;
+  }
+
+  /*
+   * Returns the location of the shortest video in durations
+   */
+  public int getShortestVideo() {
+    int minValue = durations[0];
+    int minLocation = 0;
+
+    for (int index = 0; index < durations.length; index++) {
+      if (durations[index] < minValue) {
+        minValue = durations[index];
+        minLocation = index;
+      }
+    }
+
+    return minLocation;
+  }
+
+  /*
+   * Returns the location of the maximum number of views in numViews
+   */
+  public int getMaxNumViews() {
+    int maxValue = numViews[0];
+    int maxLocation = 0;
+    
+    for (int index = 0; index < numViews.length; index++) {
+      if (numViews[index] > maxValue) {
+        maxValue = numViews[index];
+        maxLocation = index;
+      }
+    }
+
+    return maxLocation;
+  }
+
+  /*
+   * Returns the information for the video at the specified index
+   */
+  public String getVideoInfo(int index) {
+    return videoTitles[index] + "\nDuration: " + durations[index] + "\nNumber of Views: " + numViews[index];
+  }
+
+  /*
+   * Returns a String containing each video title and its duration and number of views
+   */
+  public String toString() {
+    String result = "";
+
+    for (int index = 0; index < videoTitles.length; index++) {
+      result += videoTitles[index] + " (" + durations[index] + " mins, " + numViews[index] + " views)\n";
+    }
+
+    return result;
+  }
+  
+}
