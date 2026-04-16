@@ -1,0 +1,10 @@
+Shape[] theShapes = { new Square("red"),
+  new Circle("cyan"), new Triangle("pink") };
+
+for (Shape aShape : theShapes) {
+  aShape.setColor("purple");
+}
+
+for (Shape aShape : theShapes) {
+  System.out.println(aShape);
+}
