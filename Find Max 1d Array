@@ -1,0 +1,9 @@
+public int findMax(int[] nums) {
+  int max = nums[0];
+  for (int index = 1; index < nums.length; index++) {
+    if (nums[index] > max) {
+      max = nums[index];
+    }
+  }
+  return max;
+}
