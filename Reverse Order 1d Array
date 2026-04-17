@@ -1,0 +1,21 @@
+  //Reverse 1d Array
+  public void reverseResponses() {
+  for (Respondent)
+       
+  public void reverseResponses() {
+    // We only loop until the midpoint
+    for (int index = 0; index < responses.length / 2; index++) {
+      
+      //Save First
+      Respondent temp = responses[index];
+      
+      //Find the back element
+      int backIndex = responses.length - 1 - index;
+      
+      //move the back element to the front
+      responses[index] = responses[backIndex];
+      
+      // 4. Move front to back
+      responses[backIndex] = temp;
+    }
+  }
