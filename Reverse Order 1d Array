@@ -1,9 +1,7 @@
-  //Reverse 1d Array
+//Reverse 1d Array
   public void reverseResponses() {
-  for (Respondent)
-       
-  public void reverseResponses() {
-    // We only loop until the midpoint
+    
+    //loop till midpoint
     for (int index = 0; index < responses.length / 2; index++) {
       
       //Save First
@@ -19,3 +17,7 @@
       responses[backIndex] = temp;
     }
   }
+
+
+    responses.reverseResponses();
+    System.out.println(responses);
