@@ -1,0 +1,10 @@
+String[] tops = {"Tank", "T-Shirt", "Sweater"};
+String[] bottoms = {"Jeans", "Shorts", "Khakis", "Pajamas"};
+
+//loops through tops
+for (int i = 0; i < tops.length; i++) {
+  
+  //loops through bottom next to the top
+  for (int j = 0; j < bottoms.length; j++) {
+    System.out.println(tops[i] + " & " + bottoms[j]);
+  }
