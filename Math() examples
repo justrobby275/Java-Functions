@@ -1,0 +1,8 @@
+public double[] getNumbersSquared(double[] numbers) {
+    double[] squaredResults = new double[numbers.length];
+
+    for (int i = 0; i < numbers.length; i++) {
+        squaredResults[i] = Math.pow(numbers[i], 2);
+        }
+    return squaredResults;
+}
