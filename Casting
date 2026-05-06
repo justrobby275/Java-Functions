@@ -2,6 +2,18 @@
 double num = 1.5;
 System.out.println((int) num + 0.5)
 
+//better version
+double x = -1.9;
+
+if (x >= 0) {
+    x = (int) (x + 0.5);
+System.out.println(x);
+} else {
+    x = (int) (x - 0.5);
+System.out.println(x);
+}
+
+
 //takes off the decimal
 double price = 3.5;
 System.out.println((int) price);
