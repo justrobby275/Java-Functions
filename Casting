@@ -1,0 +1,11 @@
+//rounds double to int
+double num = 1.5;
+System.out.println((int) num + 0.5)
+
+//takes off the decimal
+double price = 3.5;
+System.out.println((int) price);
+
+//Adds a decimal
+int numberA = 3;
+System.out.println((double) numberA);
