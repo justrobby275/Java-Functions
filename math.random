@@ -1,0 +1,15 @@
+//shuffle array
+
+//pick random index
+for (int i = 0; i < nums.length; i++) {
+       int randomIndex = (int) (Math.random() * nums.length);
+    
+//swap numbers
+    int temp = nums[i];
+    nums[i] = nums[randomIndex];
+    nums[randomIndex] = temp;
+}
+
+//return random value
+int index = (int) (Math.random() * names.length);
+System.out.println(names[index]);
