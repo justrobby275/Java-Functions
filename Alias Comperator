@@ -1,1 +1,29 @@
+public class Tree {
+    private String species;
+    private int ID;
 
+    public Tree(String species, int ID) {
+        this.species = species;
+        this.ID = ID;
+    }
+
+    // Accessor for ID
+    public int getID() {
+        return ID;
+    }
+
+    // equals() method to compare trees based on ID
+    @Override
+    public boolean equals(Object other) {
+        // Check if the other object is null or not a Tree
+        if (other == null || !(other instanceof Tree)) {
+            return false;
+        }
+
+        // Cast other to a Tree object
+        Tree otherTree = (Tree) other;
+
+        // Compare IDs
+        return this.ID == otherTree.getID();
+    }
+}
