@@ -1,0 +1,71 @@
+/*
+ * Represents a customer's order
+ */
+public class Order {
+
+  private boolean isFilled;     // Whether or not an order has been filled
+  private double cost;          // The cost of an order
+  private String shipping;      // The shipping method to send an order
+
+  /*
+   * Sets isFilled to the specified status, cost to the specified
+   * cost and shipping to the specified shipping method
+   */
+  public Order(boolean isFilled, double cost, String shipping) {
+    this.isFilled = isFilled;
+    this.cost = cost;
+    this.shipping = shipping;
+  }
+
+  /*
+   * Returns a String containing the shipping cost if the order is filled,
+   * other returns a String indicating that the order is not ready
+   */
+  public String ship() {
+    if (isFilled) {
+      return "Shipping cost: " + calculateShipping();
+    }
+    else {
+      return "Order not ready.";
+    }
+  }
+
+  /*
+   * Returns the shipping cost based on the shipping method
+   */
+  public double calculateShipping() {
+    if (shipping.equals("Regular")) {
+      return 0;
+    }
+    else if (shipping.equals("Express")) {
+      return 1.75;
+    }
+    else {
+      return 0.50;
+    }
+  }
+  
+}
+
+
+
+public class OrderRunner {
+  public static void main(String[] args) {
+
+    Order book = new Order(true, 9.99, "Express");
+    Order chemistrySet = new Order(false, 72.50, "Regular");
+    Order pens = new Order(true, 53.75, "");
+    Order microbits = new Order(true, 135.99, "Express");
+
+    String bookStatus = book.ship();
+    String chemistrySetStatus = chemistrySet.ship();
+    String pensStatus = pens.ship();
+    String microbitsStatus = microbits.ship();
+
+    System.out.println(bookStatus);
+    System.out.println(chemistrySetStatus);
+    System.out.println(pensStatus);
+    System.out.println(microbitsStatus);
+    
+  }
+}
